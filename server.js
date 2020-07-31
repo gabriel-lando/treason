@@ -12,11 +12,13 @@
  */
 'use strict';
 
+const DEFAULT_PORT = process.env.PORT || 8080;
+
 var dataAccess = require('./dataaccess-fake');
 
 var argv = require('optimist')
     .usage('$0 [--debug] [--recreate-views] [--port <port>] [--log <logfile>] [--db <database>]')
-    .default('port', 8080)
+    .default('port', DEFAULT_PORT)
     .default('log', 'treason.log')
     .default('db', 'treason_db')
     .argv;
